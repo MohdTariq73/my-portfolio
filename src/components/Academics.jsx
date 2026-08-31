@@ -1,9 +1,7 @@
 import { useState } from "react";
-
 import "./Academics.css";
 
 function Academics() {
-
   const [selectedMarksheet, setSelectedMarksheet] = useState(null);
 
   const openMarksheet = (image) => {
@@ -18,9 +16,7 @@ function Academics() {
     <section className="academics" id="academics">
 
       {/* Heading */}
-
       <div className="section-heading academics-heading">
-
         <span className="section-label">
           02 — ACADEMICS
         </span>
@@ -29,16 +25,13 @@ function Academics() {
           My academic
           <span> journey.</span>
         </h2>
-
       </div>
-
 
       <div className="academic-timeline">
 
         {/* =========================
             B.Tech
         ========================= */}
-
         <div className="academic-item">
 
           <div className="academic-year">
@@ -52,7 +45,6 @@ function Academics() {
           <div className="academic-card">
 
             <div className="academic-card-top">
-
               <span className="academic-type">
                 UNDERGRADUATE
               </span>
@@ -60,7 +52,6 @@ function Academics() {
               <span className="academic-status">
                 2nd Year
               </span>
-
             </div>
 
             <h3>
@@ -79,7 +70,6 @@ function Academics() {
             </p>
 
             <div className="academic-score-highlight">
-
               <span>
                 FIRST YEAR CGPA
               </span>
@@ -87,18 +77,14 @@ function Academics() {
               <strong>
                 8.47 / 10
               </strong>
-
             </div>
 
           </div>
-
         </div>
-
 
         {/* =========================
             Class XII
         ========================= */}
-
         <div className="academic-item">
 
           <div className="academic-year">
@@ -112,7 +98,6 @@ function Academics() {
           <div className="academic-card">
 
             <div className="academic-card-top">
-
               <span className="academic-type">
                 SENIOR SECONDARY
               </span>
@@ -120,7 +105,6 @@ function Academics() {
               <span className="academic-score">
                 80%
               </span>
-
             </div>
 
             <h3>
@@ -140,7 +124,7 @@ function Academics() {
               className="marksheet-button"
               onClick={() =>
                 openMarksheet(
-                  "/marksheets/class-12-marksheet.jpg"
+                  `${import.meta.env.BASE_URL}marksheets/class-12-marksheet.jpg`
                 )
               }
             >
@@ -149,14 +133,11 @@ function Academics() {
             </button>
 
           </div>
-
         </div>
-
 
         {/* =========================
             Class X
         ========================= */}
-
         <div className="academic-item">
 
           <div className="academic-year">
@@ -170,7 +151,6 @@ function Academics() {
           <div className="academic-card">
 
             <div className="academic-card-top">
-
               <span className="academic-type">
                 SECONDARY
               </span>
@@ -178,7 +158,6 @@ function Academics() {
               <span className="academic-score">
                 91%
               </span>
-
             </div>
 
             <h3>
@@ -198,7 +177,7 @@ function Academics() {
               className="marksheet-button"
               onClick={() =>
                 openMarksheet(
-                  "/marksheets/class-10-marksheet.jpg"
+                  `${import.meta.env.BASE_URL}marksheets/class-10-marksheet.jpg`
                 )
               }
             >
@@ -207,28 +186,21 @@ function Academics() {
             </button>
 
           </div>
-
         </div>
 
       </div>
 
-
       {/* =========================
           Marksheet Modal
       ========================= */}
-
       {selectedMarksheet && (
-
         <div
           className="marksheet-modal"
           onClick={closeMarksheet}
         >
-
           <div
             className="marksheet-modal-content"
-            onClick={(event) =>
-              event.stopPropagation()
-            }
+            onClick={(event) => event.stopPropagation()}
           >
 
             <button
@@ -244,9 +216,7 @@ function Academics() {
             />
 
           </div>
-
         </div>
-
       )}
 
     </section>
