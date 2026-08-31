@@ -1,0 +1,666 @@
+/* =========================================
+   ACADEMICS SECTION
+========================================= */
+
+.academics {
+  position: relative;
+
+  width: min(1200px, 90%);
+
+  margin: 0 auto;
+
+  padding: 140px 0;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.academics-heading {
+  max-width: 750px;
+
+  margin-bottom: 90px;
+}
+
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.academic-timeline {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 55px;
+}
+
+
+/* Vertical timeline */
+
+.academic-timeline::before {
+  content: "";
+
+  position: absolute;
+
+  left: 130px;
+
+  top: 20px;
+
+  bottom: 20px;
+
+  width: 1px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(139, 92, 246, 0.55),
+      rgba(255, 255, 255, 0.08),
+      rgba(139, 92, 246, 0.3),
+      transparent
+    );
+}
+
+
+/* =========================================
+   TIMELINE ITEM
+========================================= */
+
+.academic-item {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 100px 60px 1fr;
+
+  align-items: start;
+}
+
+
+/* =========================================
+   YEAR
+========================================= */
+
+.academic-year {
+  padding-top: 25px;
+
+  color: var(--text-muted);
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  letter-spacing: 1.5px;
+
+  text-align: right;
+}
+
+
+/* =========================================
+   TIMELINE DOT
+========================================= */
+
+.academic-line {
+  position: relative;
+
+  height: 100%;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+
+.academic-dot {
+  position: relative;
+
+  margin-top: 29px;
+
+  width: 11px;
+  height: 11px;
+
+  border-radius: 50%;
+
+  background: var(--accent-light);
+
+  border: 3px solid var(--bg-primary);
+
+  box-shadow:
+    0 0 0 1px rgba(167, 139, 250, 0.45),
+    0 0 18px rgba(139, 92, 246, 0.7);
+
+  z-index: 3;
+}
+
+
+/* =========================================
+   ACADEMIC CARD
+========================================= */
+
+.academic-card {
+  position: relative;
+
+  padding: 30px 34px;
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-lg);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.015)
+    );
+
+  overflow: hidden;
+
+  backdrop-filter: blur(16px);
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.16);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+
+/* Ambient purple glow */
+
+.academic-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  right: -150px;
+  top: -160px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(139, 92, 246, 0.18),
+      transparent 68%
+    );
+
+  filter: blur(30px);
+
+  opacity: 0;
+
+  transition:
+    opacity 0.45s ease,
+    transform 0.5s ease;
+}
+
+
+/* Subtle top reflection */
+
+.academic-card::after {
+  content: "";
+
+  position: absolute;
+
+  left: 30px;
+  right: 30px;
+  top: 0;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.14),
+      transparent
+    );
+}
+
+
+/* Hover */
+
+.academic-card:hover {
+  transform: translateX(7px);
+
+  border-color:
+    rgba(167, 139, 250, 0.3);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.018)
+    );
+
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.28),
+    0 10px 45px rgba(139, 92, 246, 0.06);
+}
+
+
+.academic-card:hover::before {
+  opacity: 1;
+
+  transform: scale(1.12);
+}
+
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.academic-card-top {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+
+  z-index: 1;
+}
+
+
+.academic-type {
+  color: var(--accent-light);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+
+.academic-status,
+.academic-score {
+  padding: 6px 11px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 100px;
+
+  color: var(--text-secondary);
+
+  background: rgba(255, 255, 255, 0.035);
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.academic-card h3 {
+  position: relative;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 29px;
+
+  font-weight: 500;
+
+  letter-spacing: -1px;
+
+  color: #f4f4f5;
+
+  margin-bottom: 8px;
+
+  z-index: 1;
+}
+
+
+.academic-institute {
+  position: relative;
+
+  color: #d4d4d8;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  margin-bottom: 16px;
+
+  z-index: 1;
+}
+
+
+.academic-description {
+  position: relative;
+
+  max-width: 700px;
+
+  color: var(--text-muted);
+
+  font-size: 14px;
+
+  line-height: 1.85;
+
+  z-index: 1;
+}
+
+
+/* =========================================
+   CGPA / SCORE HIGHLIGHT
+========================================= */
+
+.academic-score-highlight {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 25px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid var(--border);
+
+  z-index: 1;
+}
+
+
+.academic-score-highlight span {
+  color: var(--text-muted);
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+
+.academic-score-highlight strong {
+  color: var(--accent-light);
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 21px;
+
+  font-weight: 500;
+
+  text-shadow:
+    0 0 20px rgba(167, 139, 250, 0.25);
+}
+
+
+/* =========================================
+   MARKSHEET BUTTON
+========================================= */
+
+.marksheet-button {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 24px;
+
+  padding: 10px 16px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 100px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  color: var(--text-secondary);
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  z-index: 2;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.marksheet-button span {
+  font-size: 14px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.marksheet-button:hover {
+  transform: translateY(-2px);
+
+  background: rgba(139, 92, 246, 0.08);
+
+  border-color:
+    rgba(167, 139, 250, 0.4);
+
+  color: white;
+
+  box-shadow:
+    0 8px 25px rgba(139, 92, 246, 0.1);
+}
+
+
+.marksheet-button:hover span {
+  transform: translate(2px, -2px);
+}
+
+
+/* =========================================
+   MARKSHEET MODAL
+========================================= */
+
+.marksheet-modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 40px;
+
+  background:
+    rgba(0, 0, 0, 0.88);
+
+  backdrop-filter: blur(18px);
+
+  animation: marksheetFadeIn 0.3s ease;
+}
+
+
+.marksheet-modal-content {
+  position: relative;
+
+  max-width: 900px;
+
+  max-height: 90vh;
+
+  padding: 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #151515,
+      #0d0d0d
+    );
+
+  box-shadow:
+    0 35px 120px rgba(0, 0, 0, 0.7),
+    0 0 60px rgba(139, 92, 246, 0.06);
+
+  animation: marksheetModalIn 0.35s ease;
+}
+
+
+.marksheet-modal-content img {
+  display: block;
+
+  max-width: 100%;
+
+  max-height: 85vh;
+
+  object-fit: contain;
+
+  border-radius: 9px;
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.marksheet-close {
+  position: absolute;
+
+  top: -18px;
+  right: -18px;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  border-radius: 50%;
+
+  background: #111;
+
+  color: white;
+
+  font-size: 23px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.4);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+.marksheet-close:hover {
+  transform: rotate(90deg);
+
+  background: #1c1c1c;
+
+  border-color:
+    rgba(167, 139, 250, 0.4);
+}
+
+
+/* =========================================
+   AMBIENT SECTION GLOW
+========================================= */
+
+.academics::after {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 350px;
+
+  left: -300px;
+  top: 35%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(139, 92, 246, 0.055),
+      transparent 70%
+    );
+
+  filter: blur(40px);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes marksheetFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes marksheetModalIn {
+  from {
+    opacity: 0;
+
+    transform: scale(0.94) translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1) translateY(0);
+  }
+}

@@ -1,0 +1,579 @@
+/* =========================================
+   PROJECTS SECTION
+========================================= */
+
+.projects {
+  position: relative;
+
+  width: min(1200px, 90%);
+
+  margin: 0 auto;
+
+  padding: 140px 0;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.projects-heading {
+  max-width: 800px;
+
+  margin-bottom: 70px;
+}
+
+
+.projects-heading p {
+  max-width: 550px;
+
+  margin-top: 24px;
+
+  color: var(--text-muted);
+
+  font-size: 15px;
+
+  line-height: 1.85;
+}
+
+
+/* =========================================
+   PROJECT GRID
+========================================= */
+
+.projects-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 26px;
+}
+
+
+/* =========================================
+   PROJECT CARD
+========================================= */
+
+.project-card {
+  position: relative;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-lg);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.012)
+    );
+
+  backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.45s ease,
+    border-color 0.4s ease,
+    box-shadow 0.45s ease;
+}
+
+
+/* Top reflection */
+
+.project-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 30px;
+  right: 30px;
+  top: 0;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.15),
+      transparent
+    );
+
+  z-index: 3;
+}
+
+
+/* Ambient glow */
+
+.project-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  right: -120px;
+  bottom: -120px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(139, 92, 246, 0.14),
+      transparent 70%
+    );
+
+  filter: blur(35px);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: opacity 0.45s ease;
+}
+
+
+.project-card:hover {
+  transform: translateY(-9px);
+
+  border-color:
+    rgba(167, 139, 250, 0.32);
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.36),
+    0 10px 45px rgba(139, 92, 246, 0.07);
+}
+
+
+.project-card:hover::after {
+  opacity: 1;
+}
+
+
+/* =========================================
+   PROJECT IMAGE
+========================================= */
+
+.project-image {
+  position: relative;
+
+  width: 100%;
+
+  height: 310px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #17121f,
+      #0b0b0b
+    );
+}
+
+
+.project-image::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 55%,
+      rgba(7, 7, 7, 0.35)
+    );
+
+  pointer-events: none;
+
+  transition: opacity 0.4s ease;
+}
+
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  opacity: 0.82;
+
+  filter:
+    saturate(0.85)
+    contrast(1.02);
+
+  transition:
+    transform 0.7s cubic-bezier(0.2, 0.65, 0.25, 1),
+    opacity 0.5s ease,
+    filter 0.5s ease;
+}
+
+
+.project-card:hover .project-image img {
+  transform: scale(1.065);
+
+  opacity: 1;
+
+  filter:
+    saturate(1)
+    contrast(1.05);
+}
+
+
+/* =========================================
+   IMAGE OVERLAY
+========================================= */
+
+.project-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    rgba(7, 7, 7, 0.48);
+
+  opacity: 0;
+
+  backdrop-filter: blur(3px);
+
+  transition:
+    opacity 0.4s ease;
+
+  z-index: 2;
+}
+
+
+.project-overlay span {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 12px 19px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 100px;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(12px);
+
+  color: white;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.3px;
+
+  transform: translateY(8px);
+
+  transition:
+    transform 0.4s ease,
+    background 0.3s ease;
+}
+
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+
+.project-card:hover .project-overlay span {
+  transform: translateY(0);
+}
+
+
+.project-overlay span:hover {
+  background:
+    rgba(255, 255, 255, 0.13);
+}
+
+
+/* =========================================
+   PROJECT INFO
+========================================= */
+
+.project-info {
+  position: relative;
+
+  padding: 29px 30px 31px;
+
+  z-index: 2;
+}
+
+
+/* =========================================
+   TOP ROW
+========================================= */
+
+.project-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 21px;
+}
+
+
+.project-number {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: var(--accent-light);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+
+.project-number::after {
+  content: "";
+
+  width: 18px;
+  height: 1px;
+
+  background:
+    rgba(167, 139, 250, 0.35);
+}
+
+
+/* =========================================
+   PROJECT LINKS
+========================================= */
+
+.project-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+}
+
+
+.project-links a {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 6px 10px;
+
+  border: 1px solid transparent;
+
+  border-radius: 100px;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.project-links a:hover {
+  color: white;
+
+  border-color:
+    rgba(167, 139, 250, 0.25);
+
+  background:
+    rgba(139, 92, 246, 0.07);
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.project-info h3 {
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 28px;
+
+  font-weight: 500;
+
+  letter-spacing: -1px;
+
+  color: #f4f4f5;
+
+  margin-bottom: 12px;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.project-card:hover .project-info h3 {
+  color: #ffffff;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.project-info p {
+  color: var(--text-muted);
+
+  font-size: 13px;
+
+  line-height: 1.85;
+
+  margin-bottom: 23px;
+
+  max-width: 500px;
+}
+
+
+/* =========================================
+   TECHNOLOGY TAGS
+========================================= */
+
+.project-technologies {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+
+.project-technologies span {
+  padding: 6px 10px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 100px;
+
+  color: var(--text-secondary);
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.2px;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.project-card:hover .project-technologies span {
+  border-color:
+    rgba(255, 255, 255, 0.13);
+}
+
+
+/* =========================================
+   SECTION AMBIENT GLOW
+========================================= */
+
+.projects::after {
+  content: "";
+
+  position: absolute;
+
+  width: 550px;
+  height: 350px;
+
+  right: -320px;
+  top: 40%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(139, 92, 246, 0.055),
+      transparent 70%
+    );
+
+  filter: blur(45px);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .project-card {
+    border-radius: 18px;
+  }
+
+  .project-image {
+    height: 230px;
+  }
+
+  .project-info {
+    padding: 24px;
+  }
+
+  .project-info h3 {
+    font-size: 25px;
+  }
+
+  .project-top {
+    margin-bottom: 18px;
+  }
+
+  .project-links {
+    gap: 5px;
+  }
+
+}
