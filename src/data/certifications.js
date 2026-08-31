@@ -6,7 +6,7 @@ const certifications = [
     title: "Oracle Fusion AI Agent Studio Certified Foundations Associate - Rel 1",
     issuer: "Oracle",
     date: "August 23, 2026",
-    pdf: "/certificates/oracle-ai-agent-studio.pdf",
+    pdf: `${import.meta.env.BASE_URL}certificates/oracle-ai-agent-studio.pdf`,
   },
 
   {
@@ -16,7 +16,7 @@ const certifications = [
     title: "Oracle Data Platform 2025 Certified Foundations Associate",
     issuer: "Oracle",
     date: "May 29, 2026",
-    pdf: "/certificates/oracle-data-platform.pdf",
+    pdf: `${import.meta.env.BASE_URL}certificates/oracle-data-platform.pdf`,
   },
 
   {
@@ -26,7 +26,7 @@ const certifications = [
     title: "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
     issuer: "Oracle",
     date: "May 26, 2026",
-    pdf: "/certificates/oracle-cloud-ai-foundations.pdf",
+    pdf: `${import.meta.env.BASE_URL}certificates/oracle-cloud-ai-foundations.pdf`,
   },
 ];
 
